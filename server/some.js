@@ -36,6 +36,7 @@ const orders = [
 
 const deliveredOrders = orders.some(item => item.delivered);
 
+// EJERCICIO PENDIENTE
 const dates = [
     {
       startDate: new Date(2021, 1, 1, 10),
@@ -53,3 +54,22 @@ const dates = [
       title: "Cena",
     },
   ];
+
+  const areIntervalsOverlapping = require('date-fns/areIntervalsOverlapping');
+
+  const newAppointment = {
+    startDate: new Date(2021, 1, 1, 20),
+    endDate: new Date(2021, 1, 1, 21),
+    title: "Clases",
+  };
+
+  const isOverlaping = (newDate) => {
+    return dates.some(date => {
+      return areIntervalsOverlapping(
+        {start: date.startDate, end: date.endDate},
+        {start: newDate.startDate, end: newDate.endDate}
+      )
+    })
+  };
+
+  console.log("newAppointementIsOverlaping: ", isOverlaping(newAppointment));

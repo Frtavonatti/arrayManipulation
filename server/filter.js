@@ -39,7 +39,8 @@ const orders = [
 //   const deliveredOrders = orders.filter(item => item.delivered == true);
 //   const respuesta = deliveredOrders.forEach(item => console.log(item.customerName))
 
-// el método includes() determina si una matriz incluye un determinado elemento, devuelve true o false según corresponda.
+// el método includes() determina si una matriz incluye un determinado elemento, devuelve
+// true o false según corresponda.
   const search = (query) => {
     return orders.filter(item => {
         return item.customerName.includes(query)
